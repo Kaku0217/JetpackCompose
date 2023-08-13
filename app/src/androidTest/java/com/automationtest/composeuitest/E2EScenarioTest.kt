@@ -4,6 +4,7 @@ import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.automationtest.composeuitest.data.Product
 import com.automationtest.composeuitest.data.TestData
 import com.automationtest.composeuitest.data.testAccount
 import com.automationtest.composeuitest.data.testAddress
@@ -52,6 +53,11 @@ class E2EScenarioTest {
                 LoginScreen()
             }
         }
+        testData.testProducts = listOf(
+            Product(name = ProductItems.PRODUCT_LIST[0], index = 0),
+            Product(name = ProductItems.PRODUCT_LIST[1], index = 1),
+            Product(name = ProductItems.PRODUCT_LIST[0], index = 0)
+        )
         testData.testCartQuantity = 3
         testScenario()
     }
@@ -61,16 +67,19 @@ class E2EScenarioTest {
         e2eTestDSL(composeTestRule) {
             // Verify login flow
             login(testData.testAccount)
-            // Select first item
-            selectItem(0)
-            // Add to cart
-            addToCart("1")
-            // Go back to Showcase Screen
-            backToShowcaseScreen()
-            // Select second item
-            selectItem(1)
-            // Add to cart
-            addToCart("2")
+
+            // Iterate through each product in testProducts along with its index
+            testData.testProducts.forEachIndexed { index, product ->
+                // Select item based on the index
+                selectItem(product.index)
+
+                // Add to cart based on the index (adding 1 to the index as quantity)
+                addToCart((index + 1).toString())
+
+                // Go back to Showcase Screen
+                backToShowcaseScreen()
+            }
+
             // Go to cart
             goToCart(testData.testCartQuantity)
             // Go to checkout
