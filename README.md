@@ -81,7 +81,16 @@ testScenarioSuccess: passed
     ii. Consider any setup needed for screen transitions as discussed in point 1 of Exercise 2.
 
 ### 3. Bonus Point (5a) Thoughts
-  a. **Item Quantity Assertion**: It's an excellent addition to the test, ensuring that the functionality of adding items to the cart is working correctly. It adds an extra layer of verification and makes the test more robust against potential issues.
+  a. **Item Quantity Assertion**:
+1. Insert test tags to items that added to cart with same tag name.
+2. Verify the tag node numbers that match the tag name mentioned in step1. 
+```kotlin
+// Verify the number of items in the cart matches the expected quantity
+val cartScreenNodes = composeTestRule.onAllNodes(hasTestTag(TestTags.CART_SCREEN_ITEM_TAG))
+cartScreenNodes.assertCountEquals(expectedQuantity)
+
+```
+  
 
 ## Contact
 
