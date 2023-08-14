@@ -62,24 +62,30 @@ The file structure and design pattern can follow the earlier mentioned folder st
 ![Slide 4](Screenshot/Automation/Slide4.JPG)
 
 ### 5.  Test Result and Report
-Run /gradlew connectedAndroidTest and get report.
+Run /gradlew connectedAndroidTest and get report, write two test cases and detected issue with one
 ![Slide 5](Screenshot/Automation/Slide5.JPG)
-```
-Write two test cases and detected issue with one
-testScenarioFailure: failed 
-testScenarioSuccess: passed 
-```
+
 ## Scenario 2: Foundations for the Framework
 
 ### 1. Navigating between Screens
-  a. **Identifying Screen Transition**: You can verify the existence of specific UI elements or tags that are unique to the new screen. In cases of slow network connection, using `composeTestRule.waitForIdle()` allows you to wait until the UI is idle.
-  b. **Internal Method Implementation**: You can create a generic method to handle screen transitions, available across all screens. It can log the current screen after ensuring it's loaded.
+  a. **Identifying Screen Transition**:
+1. Verify the existence of specific UI elements or tags that are unique to the new screen.
+2. In cases of slow network connection, using `composeTestRule.waitForIdle()` allows you to wait until the UI is idle.
+3. 
+  b. **Internal Method Implementation**:
+Here is a generic method to handle screen transitions, available across all screens. It can log the current screen after ensuring it's loaded.
+```kotlin
+composeTestRule.waitForIdle()
+Log.d("ScreenTransition", "Transitioned to $screenName")
+```
 
 ### 2. Jetpack Compose Requirements
   a. **Before Test Starts**:
-    i. You'll need to set up the ComposeTestRule and initialize it with the activity you want to test.
-    ii. Consider any setup needed for screen transitions as discussed in point 1 of Exercise 2.
+1. Insert the test tags into UI Screen or Component that need to verify.
+2. Set up the ComposeTestRule and initialize it with the start activity.
+3. Initiate the test data with specific data that use to test.
 
+    
 ### 3. Bonus Point (5a) Thoughts
   a. **Item Quantity Assertion**:
 1. Insert test tags to items that added to cart with same tag name.
@@ -88,9 +94,7 @@ testScenarioSuccess: passed
 // Verify the number of items in the cart matches the expected quantity
 val cartScreenNodes = composeTestRule.onAllNodes(hasTestTag(TestTags.CART_SCREEN_ITEM_TAG))
 cartScreenNodes.assertCountEquals(expectedQuantity)
-
 ```
-  
 
 ## Contact
 
