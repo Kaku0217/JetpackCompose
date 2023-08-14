@@ -76,13 +76,18 @@ Run /gradlew connectedAndroidTest and get report, write two test cases and detec
 composeTestRule.onNode(hasTestTag(expectedTag)).assertExists()
 ```
 2. In cases of slow network connection, using `composeTestRule.waitForIdle()` allows to wait until the UI is idle.
-
+```kotlin
+composeTestRule.waitForIdle()
+```
  
   b. **Internal Method Implementation**:
 
 Here is a generic method to handle screen transitions, available across all screens. It can log the current screen after ensuring it's loaded.
 ```kotlin
-composeTestRule.waitForIdle()
+composeTestRule.waitUntil(
+    condition = { composeTestRule.onNodeWithTag("Next Screen").assertExists() },
+    screenName = "Next Screen"
+)
 Log.d("ScreenTransition", "Transitioned to $screenName")
 ```
 
