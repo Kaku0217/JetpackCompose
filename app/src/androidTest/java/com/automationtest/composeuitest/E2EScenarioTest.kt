@@ -25,7 +25,7 @@ class E2EScenarioTest {
 
     @Before
     fun setup() {
-        // Initialize testData
+        // Initialize testData before running the test
         testData = TestData(
             testAccount,
             testAddress,
@@ -35,7 +35,7 @@ class E2EScenarioTest {
     }
     @Test
     fun testScenarioSuccess() {
-        // Start the app
+        // Test the positive scenario with 2 items in the cart
         composeTestRule.setContent {
             ComposeUITestTheme {
                 LoginScreen()
@@ -47,7 +47,7 @@ class E2EScenarioTest {
 
     @Test
     fun testScenarioFailure() {
-        // Start the app
+        // Test the negative scenario with 3 items in the cart
         composeTestRule.setContent {
             ComposeUITestTheme {
                 LoginScreen()
@@ -62,10 +62,9 @@ class E2EScenarioTest {
         testScenario()
     }
 
-
     private fun testScenario() {
         e2eTestDSL(composeTestRule) {
-            // Verify login flow
+            // Test login, product selection, adding to cart, checking out, and verifying the process
             login(testData.testAccount)
 
             // Iterate through each product in testProducts along with its index
@@ -93,10 +92,8 @@ class E2EScenarioTest {
         }
     }
 
-
     @After
     fun tearDown() {
-        // Reset
-
+        // Code to reset any global state if needed
     }
 }
