@@ -69,6 +69,7 @@ Run /gradlew connectedAndroidTest and get report, write two test cases and detec
 
 ### 1. Navigating between Screens
   a. **Identifying Screen Transition**:
+
 1. Verify the existence of specific UI elements or tags that are unique to the new screen.
 ```kotlin
 // Verify the existence of a node with the expected test tag
@@ -78,6 +79,7 @@ composeTestRule.onNode(hasTestTag(expectedTag)).assertExists()
 
  
   b. **Internal Method Implementation**:
+
 Here is a generic method to handle screen transitions, available across all screens. It can log the current screen after ensuring it's loaded.
 ```kotlin
 composeTestRule.waitForIdle()
