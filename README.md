@@ -7,9 +7,9 @@
 
 An detailed explanation of implementation of from scratch an automated testing framework to verify the purching flow for Android Shopmming Mall application.
 
-# Scenario 1: E2E Test for Purchase Flow
+## Scenario 1: E2E Test for Purchase Flow
 
-## ■ Reference APP: Shopping Mall
+### 1. Reference APP: Shopping Mall
 First, implement a reference application used to verify the purchasing flow in the application using the Jetpack Compose library.
 ![Slide 1](Screenshot/Automation/Slide1.JPG)
 I have implementated screens like above and insert test tags into each screen and some UI compoments.
@@ -23,7 +23,7 @@ I have implementated screens like above and insert test tags into each screen an
 8. **Confirm Purchase**: Insert test tags of  `Confirm Purchase screen ` and  `Finish Button `.
 9. **Thank-you Screen**: Insert test tags of  `Thank-you screen ` and  `Back Home Button `.
 
-## ■ Automated Testing Framework
+### 2. Automated Testing Framework
 Next, implemente an automated testing framework using using the Jetpack Compose testing library.
 ![Slide 2](Screenshot/Automation/Slide2.JPG)
 
@@ -33,7 +33,7 @@ Next, implemente an automated testing framework using using the Jetpack Compose 
 4. **E2ETestDSL.kt**: Define DSL.
 5. **E2ETestFunctions.kt**: Implementation Compose’s helper methods.
 
-## ■ E2E Test Scenarios
+### 3.  E2E Test Scenarios
 Next, write an E2E test to verify the purchasing flow in the application using the Jetpack Compose testing library.
 ![Slide 3](Screenshot/Automation/Slide3.JPG)
 
@@ -56,14 +56,19 @@ e2eTestDSL(composeTestRule) {
     verifyTagExists(TestTags.THANK_YOU_SCREEN_TAG)
 }
 ```
-
+### 4.  Design Pattern and Folder Stucture
 The file structure and design pattern can follow the earlier mentioned folder structure.
 
-
-
 ![Slide 4](Screenshot/Automation/Slide4.JPG)
-![Slide 5](Screenshot/Automation/Slide5.JPG)
 
+### 5.  Test Result and Report
+Run /gradlew connectedAndroidTest and get report.
+![Slide 5](Screenshot/Automation/Slide5.JPG)
+```
+Write two test cases and detected issue with one
+testScenarioFailure: failed 
+testScenarioSuccess: passed 
+```
 ## Scenario 2: Foundations for the Framework
 
 ### 1. Navigating between Screens
@@ -84,4 +89,7 @@ The file structure and design pattern can follow the earlier mentioned folder st
 - Your Email: [hou.kaku@gmail.com](mailto:hou.kaku@gmail.com)
 
 ## Note
-
+### Timeline
+- 2023.08.08: learn Jetpack Compose library
+- 2023.08.09: implement Shopping Mall APP
+- 2023.08.10: implement automated testing framework and E2E test cases
