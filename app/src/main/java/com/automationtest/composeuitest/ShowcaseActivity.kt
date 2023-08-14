@@ -96,7 +96,6 @@ fun ShowcaseScreen() {
                                 modifier = Modifier.fillMaxWidth()
                             ) {
                                 itemsIndexed(rowProducts) { _, product ->
-                                    //val productTag = TestTags.SHOWCASE_PRODUCT_TAG + "_" + product
                                     val productTag = TestTags.SHOWCASE_PRODUCT_TAG
                                     Box(
 

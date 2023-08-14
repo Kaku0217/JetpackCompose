@@ -20,7 +20,6 @@ import com.automationtest.composeuitest.testdata.*
 
 @Composable
 fun CartIconWithBadge(itemCount: Int, onClick: () -> Unit) {
-    //val context = LocalContext.current
     IconButton(onClick = onClick, modifier = Modifier.testTag(TestTags.CART_ICON_TAG)) {
         Icon(imageVector = Icons.Default.ShoppingCart, contentDescription = "Shopping Cart")
         if (itemCount > 0) {
@@ -29,7 +28,6 @@ fun CartIconWithBadge(itemCount: Int, onClick: () -> Unit) {
                 shape = CircleShape,
                 modifier = Modifier
                     .size(20.dp),
-                    //.testTag(TestTags.CART_BADGE_TAG), // add test tag to badge
                 content = {
                     Text(
                         text = itemCount.toString(),

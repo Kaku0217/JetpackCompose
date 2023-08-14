@@ -36,7 +36,8 @@ class AddressScreenActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddressScreen() {
-    var name by remember { mutableStateOf("") }
+    var firstname by remember { mutableStateOf("") }
+    var lastname by remember { mutableStateOf("") }
     var zipCode by remember { mutableStateOf("") }
 
     //val navController = rememberNavController()
@@ -76,8 +77,8 @@ fun AddressScreen() {
                 ) {
                     Spacer(modifier = Modifier.height(50.dp))
                     OutlinedTextField(
-                        value = name,
-                        onValueChange = { newName -> name = newName },
+                        value = firstname,
+                        onValueChange = { newName -> firstname = newName },
                         label = { Text("First Name") },
                         modifier = Modifier
                             .fillMaxWidth()
@@ -86,8 +87,8 @@ fun AddressScreen() {
                     )
 
                     OutlinedTextField(
-                        value = name,
-                        onValueChange = { newName -> name = newName },
+                        value = lastname,
+                        onValueChange = { newName -> lastname = newName },
                         label = { Text("Last Name") },
                         modifier = Modifier
                             .fillMaxWidth()
