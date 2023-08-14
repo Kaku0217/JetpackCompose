@@ -34,9 +34,9 @@ e2eTestDSL(composeTestRule) {
 The file structure and design pattern can follow the earlier mentioned folder structure.
 
 ![Slide 1](Screenshot/Automation/Slide1.JPG)
-![Slide 2](Screenshot/Automation/Slide3.JPG)
-![Slide 3](Screenshot/Automation/Slide1.JPG)
-![Slide 4](Screenshot/Automation/Slide1.JPG)
+![Slide 2](Screenshot/Automation/Slide2.JPG)
+![Slide 3](Screenshot/Automation/Slide3.JPG)
+![Slide 4](Screenshot/Automation/Slide4.JPG)
 ![Slide 5](Screenshot/Automation/Slide5.JPG)
 
 ## Scenario 2: Foundations for the Framework
