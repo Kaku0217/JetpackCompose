@@ -3,13 +3,39 @@
 </p>
 
 
-# Jetpack Compose UI Testing for E2E Purchase Flow
+# Jetpack Compose UI Testing for E2E Shoppming Mall App
 
-A detailed explanation of the end-to-end (E2E) purchase flow testing using Jetpack Compose from scratch for the Android application.
+An detailed explanation of implementation of from scratch an automated testing framework to verify the purching flow for Android Shopmming Mall application.
 
-## Scenario 1: E2E Test for Purchase Flow
+# Scenario 1: E2E Test for Purchase Flow
 
-For this scenario, I'll write an E2E test to verify the purchasing flow in the application using the Jetpack Compose testing library.
+## ■ Reference APP: Shopping Mall
+First, implement a reference application used to verify the purchasing flow in the application using the Jetpack Compose library.
+![Slide 1](Screenshot/Automation/Slide1.JPG)
+I have implementated screens like above and insert test tags into each screen and some UI compoments.
+1. **Login Scren**: Insert test tags for  `Login screen ` and  `Login Button `.
+2. **Top Bar**: Add  `Back Key ` and  `Cart Icon ` on Top bar.
+3. **Cart Icon**: Add test tags for  `Cart Icon Button ` and  `Cart Badge `.
+4. **Showcase Screen**: Insert test tags for  `Showcase Screen ` and  `All items `. 
+5. **Item Screen**: Insert test tags for  `Item screen ` and  `Add to Cart Button `.
+6. **Cart Screen**: Insert test tags for  `Cart screen `,  `Checkout Button ` and  `All Cart Items `.
+7. **Address Screen**: Insert test tags of  `Address screen ` and  `Continue Button `.
+8. **Confirm Purchase**: Insert test tags of  `Confirm Purchase screen ` and  `Finish Button `.
+9. **Thank-you Screen**: Insert test tags of  `Thank-you screen ` and  `Back Home Button `.
+
+## ■ Automated Testing Framework
+Next, implemente an automated testing framework using using the Jetpack Compose testing library.
+![Slide 2](Screenshot/Automation/Slide2.JPG)
+
+1. **TestData.kt**: Define test data.
+2. **E2EScenarioTest.kt**: Implementation of test cases.
+3. **E2ETestActions.kt**: Declaration of Compose’s helper class.
+4. **E2ETestDSL.kt**: Define DSL.
+5. **E2ETestFunctions.kt**: Implementation Compose’s helper methods.
+
+## ■ E2E Test Scenarios
+Next, write an E2E test to verify the purchasing flow in the application using the Jetpack Compose testing library.
+![Slide 3](Screenshot/Automation/Slide3.JPG)
 
 1. **Login**: Use the helper method to enter login credentials and click the login button.
 2. **Showcase Screen**: Verify the showcase screen, select the first item.
@@ -33,9 +59,8 @@ e2eTestDSL(composeTestRule) {
 
 The file structure and design pattern can follow the earlier mentioned folder structure.
 
-![Slide 1](Screenshot/Automation/Slide1.JPG)
-![Slide 2](Screenshot/Automation/Slide2.JPG)
-![Slide 3](Screenshot/Automation/Slide3.JPG)
+
+
 ![Slide 4](Screenshot/Automation/Slide4.JPG)
 ![Slide 5](Screenshot/Automation/Slide5.JPG)
 
