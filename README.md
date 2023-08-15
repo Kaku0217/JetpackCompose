@@ -98,7 +98,7 @@ Log.d("ScreenTransition", "Transitioned to $screenName")
 1. Mark the UI Screen or Component with test tags by `Modifier.testTag(tag) `.
 2. Set up the ComposeTestRule and initialize it with the start activity.
 3. Initiate the test data with specific data that is used to test.
-4. Start up the app and 
+4. Start up the app ensure the initial screen or state is ready. 
 
     
 ### 3. Items In Cart
