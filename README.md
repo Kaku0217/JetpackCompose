@@ -3,7 +3,7 @@
 </p>
 
 
-# Jetpack Compose UI Testing for E2E Shoppming Mall App
+# Jetpack Compose UI Testing Framework
 
 An detailed explanation of implementation of from scratch an automated testing framework to verify the purching flow for Android Shopmming Mall application.
 
@@ -93,12 +93,12 @@ Log.d("ScreenTransition", "Transitioned to $screenName")
 
 ### 2. Jetpack Compose Requirements
   a. **Before Test Starts**:
-1. Insert the test tags into UI Screen or Component that need to verify.
+1. Mark the UI Screen or Component with test tags by `Modifier.testTag(tag) `.
 2. Set up the ComposeTestRule and initialize it with the start activity.
 3. Initiate the test data with specific data that use to test.
 
     
-### 3. Bonus Point (5a) Thoughts
+### 3. Items In Cart
   a. **Item Quantity Assertion**:
 1. Insert test tags to items that added to cart with same tag name.
 2. Verify the tag node numbers that match the tag name mentioned in step1. 
