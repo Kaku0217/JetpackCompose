@@ -111,14 +111,12 @@ val cartScreenNodes = composeTestRule.onAllNodes(hasTestTag(TestTags.CART_SCREEN
 cartScreenNodes.assertCountEquals(expectedQuantity)
 ```
 
-## Contact
-
-- 2023.08.08: Learn Jetpack Compose library
-- 2023.08.09: Implement Shopping Mall APP
-- 2023.08.10: Implement automated testing framework and E2E test cases
-
-## Note
-### Timeline
+## Timeline
 - 2023.08.08: learn Jetpack Compose library
 - 2023.08.09: implement Shopping Mall APP
 - 2023.08.10: implement automated testing framework and E2E test cases
+
+## Contact
+
+- GitHub: [Kaku0217](https://github.com/Kaku0217/JetpackCompose.git)
+- Your Email: [hou.kaku@gmail.com](mailto:hou.kaku@gmail.com)
