@@ -58,8 +58,8 @@ e2eTestDSL(composeTestRule) {
     verifyTagExists(TestTags.THANK_YOU_SCREEN_TAG)
 }
 ```
-### 4.  Design Pattern and Folder Stucture
-The file structure and design pattern can follow the earlier mentioned folder structure.
+### 4.  Design Pattern and Folder Structure
+The file structure and design pattern can follow the below mentioned folder structure.
 
 ![Slide 4](Screenshot/Automation/Slide4.JPG)
 
