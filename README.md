@@ -119,4 +119,4 @@ cartScreenNodes.assertCountEquals(expectedQuantity)
 ## Contact
 
 - GitHub: [Kaku0217](https://github.com/Kaku0217/JetpackCompose.git)
-- Your Email: [hou.kaku@gmail.com](mailto:hou.kaku@gmail.com)
+- Email: [hou.kaku@gmail.com](mailto:hou.kaku@gmail.com)
